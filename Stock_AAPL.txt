@@ -1,4 +1,4 @@
-Set dataManagerTables = '','NFLX (1)';
+Set dataManagerTables = '','AAPL (1)';
 //This block renames script tables from non generated section which conflict with the names of managed tables
 
 For each name in $(dataManagerTables) 
@@ -21,7 +21,7 @@ Set dataManagerTables = ;
 
 Unqualify *;
 
-[NFLX_data]:
+[AAPL_data]:
 LOAD
 	[Date],
 	[Open],
@@ -30,7 +30,7 @@ LOAD
 	[Close],
 //	[Adj Close],  //no need this field
 	[Volume]
- FROM [lib://GitHub/Stock_AAPL\NFLX_rawdata.csv]
+ FROM [lib://GitHub/Stock_AAPL\AAPL_rawdata.csv]
 (txt, codepage is 28591, embedded labels, delimiter is ',', msq);
 
 
